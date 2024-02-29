@@ -248,7 +248,8 @@ DoStream:
 			break DoStream
 		}
 		if err != nil {
-			log.Fatal(err)
+			log.Println(err)
+			return nil, err
 		}
 
 		if len(resp.Candidates) != 1 {
