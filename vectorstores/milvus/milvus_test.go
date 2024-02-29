@@ -7,11 +7,11 @@ import (
 
 	"github.com/milvus-io/milvus-sdk-go/v2/client"
 	"github.com/milvus-io/milvus-sdk-go/v2/entity"
+	"github.com/shawti/langchaingo/embeddings"
+	"github.com/shawti/langchaingo/llms/openai"
+	"github.com/shawti/langchaingo/schema"
+	"github.com/shawti/langchaingo/vectorstores"
 	"github.com/stretchr/testify/require"
-	"github.com/tmc/langchaingo/embeddings"
-	"github.com/tmc/langchaingo/llms/openai"
-	"github.com/tmc/langchaingo/schema"
-	"github.com/tmc/langchaingo/vectorstores"
 )
 
 func getEmbedder(t *testing.T) (embeddings.Embedder, error) {

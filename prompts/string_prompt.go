@@ -1,7 +1,7 @@
 package prompts
 
 import (
-	"github.com/tmc/langchaingo/schema"
+	"github.com/shawti/langchaingo/schema"
 )
 
 var _ schema.PromptValue = StringPromptValue("")

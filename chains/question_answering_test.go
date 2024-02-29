@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
+	"github.com/shawti/langchaingo/llms/openai"
 	"github.com/stretchr/testify/require"
-	"github.com/tmc/langchaingo/llms/openai"
 )
 
 func TestRefineQA(t *testing.T) {

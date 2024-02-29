@@ -3,7 +3,7 @@ package memory
 import (
 	"context"
 
-	"github.com/tmc/langchaingo/schema"
+	"github.com/shawti/langchaingo/schema"
 )
 
 const (

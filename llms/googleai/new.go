@@ -6,8 +6,8 @@ import (
 	"context"
 
 	"github.com/google/generative-ai-go/genai"
-	"github.com/tmc/langchaingo/callbacks"
-	"github.com/tmc/langchaingo/llms"
+	"github.com/shawti/langchaingo/callbacks"
+	"github.com/shawti/langchaingo/llms"
 	"google.golang.org/api/option"
 )
 

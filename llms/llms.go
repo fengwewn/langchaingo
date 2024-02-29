@@ -4,7 +4,7 @@ import (
 	"context"
 	"errors"
 
-	"github.com/tmc/langchaingo/schema"
+	"github.com/shawti/langchaingo/schema"
 )
 
 // LLM is an alias for model, for backwards compatibility.

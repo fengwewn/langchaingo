@@ -6,9 +6,9 @@ import (
 	"sort"
 	"strconv"
 
-	"github.com/tmc/langchaingo/memory"
-	"github.com/tmc/langchaingo/outputparser"
-	"github.com/tmc/langchaingo/schema"
+	"github.com/shawti/langchaingo/memory"
+	"github.com/shawti/langchaingo/outputparser"
+	"github.com/shawti/langchaingo/schema"
 	"golang.org/x/exp/maps"
 )
 

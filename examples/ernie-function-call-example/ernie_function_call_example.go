@@ -6,10 +6,10 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/tmc/langchaingo/llms/ernie"
-	"github.com/tmc/langchaingo/schema"
+	"github.com/shawti/langchaingo/llms/ernie"
+	"github.com/shawti/langchaingo/schema"
 
-	"github.com/tmc/langchaingo/llms"
+	"github.com/shawti/langchaingo/llms"
 )
 
 func main() {

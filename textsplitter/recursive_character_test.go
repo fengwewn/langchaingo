@@ -3,9 +3,9 @@ package textsplitter
 import (
 	"testing"
 
+	"github.com/shawti/langchaingo/schema"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"github.com/tmc/langchaingo/schema"
 )
 
 //nolint:dupword,funlen

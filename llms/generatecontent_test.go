@@ -4,7 +4,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/tmc/langchaingo/schema"
+	"github.com/shawti/langchaingo/schema"
 )
 
 func TestTextParts(t *testing.T) {
