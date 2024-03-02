@@ -2,6 +2,8 @@ package chains
 
 import (
 	"context"
+	"fmt"
+	"github.com/shawti/langchaingo/llms/googleai"
 	"os"
 	"strings"
 	"testing"
@@ -32,11 +34,12 @@ func TestConversation(t *testing.T) {
 func TestConversationWithChatLLM(t *testing.T) {
 	t.Parallel()
 
-	if openaiKey := os.Getenv("OPENAI_API_KEY"); openaiKey == "" {
-		t.Skip("OPENAI_API_KEY not set")
+	genaiKey := os.Getenv("GENAI_API_KEY")
+	if genaiKey == "" {
+		t.Skip("GENAI_API_KEY not set")
 	}
 
-	llm, err := openai.New()
+	llm, err := googleai.New(context.Background(), googleai.WithAPIKey(genaiKey))
 	require.NoError(t, err)
 
 	c := NewConversation(llm, memory.NewConversationTokenBuffer(llm, 2000))
@@ -48,7 +51,10 @@ func TestConversationWithChatLLM(t *testing.T) {
 	require.True(t, strings.Contains(res, "Jim"), `result does contain the keyword 'Jim'`)
 
 	// this message will hit the maxTokenLimit and will initiate the prune of the messages to fit the context
-	res, err = Run(context.Background(), c, "Are you sure that my name is Jim?")
+	res, err = Run(context.Background(), c, "Are you sure that my name is Jim?", WithStreamingFunc(func(ctx context.Context, chunk []byte) error {
+		fmt.Println(string(chunk))
+		return nil
+	}))
 	require.NoError(t, err)
 	require.True(t, strings.Contains(res, "Jim"), `result does contain the keyword 'Jim'`)
 }
